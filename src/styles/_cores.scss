@@ -1,0 +1,197 @@
+.wrapper-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  @media screen and (min-width: 767px) {
+    height: calc(100vh - 360px);
+  }
+}
+
+body {
+  font-size: pxToVW(13);
+  font-weight: $regular;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    &:active,
+    &:focus,
+    &:hover {
+      outline: none;
+      text-decoration: none;
+      color: initial;
+    }
+  }
+}
+
+div,
+p,
+img,
+h2,
+h3,
+h1,
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+#root,
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.position-fix {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 99;
+  right: 0;
+  left: 0;
+}
+
+.position-absolute {
+  width: 100%;
+  padding-top: pxToVW(80);
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+input:disabled {
+  background-color: $bor-input;
+
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    background-color: $bor-input;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $black-active;
+  -webkit-box-shadow: 0 0 0px 1000px $white inset;
+}
+
+.request {
+  color: $cherry !important;
+  font-size: pxToVW(13);
+  font-weight: $regular !important;
+  padding-left: pxToVW(5);
+}
+
+.react-stars {
+  &:focus {
+    outline: none;
+  }
+
+  span {
+    img {
+      width: pxToVW(28);
+      height: pxToVW(28);
+
+      @media (min-width: 640px) {
+        width: responsiveTablet(28);
+        height: responsiveTablet(28);
+      }
+    }
+  }
+}
+
+.Toastify__toast-container {
+  width: 70vw !important;
+  padding: 0;
+  right: 0 !important;
+  margin: 0;
+  left: auto !important;
+}
+
+.non-data {
+  width: 100%;
+  text-align: center;
+  padding-top: pxToVW(160);
+  padding-right: pxToVW(20);
+  padding-left: pxToVW(20);
+  img {
+    width: pxToVW(76);
+    height: pxToVW(76);
+  }
+
+  p {
+    font-size: pxToVW(12);
+    line-height: pxToVW(18);
+    letter-spacing: pxToVW(-0.28);
+    font-weight: $regular;
+    color: $popup-btn-left !important;
+    padding-top: pxToVW(10);
+    word-break: break-all;
+  }
+
+  @media (min-width: 640px) {
+    padding-top: responsiveTablet(160);
+
+    img {
+      width: responsiveTablet(76);
+      height: responsiveTablet(76);
+    }
+
+    p {
+      line-height: responsiveTablet(20);
+    }
+  }
+}
+
+// scroll beautiful
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 pxToVW(6) $black-opacity-3;
+  border-radius: pxToVW(10);
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: pxToVW(3);
+  background-color: $white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: pxToVW(10);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.Toastify__toast {
+  min-height: pxToVW(64) !important;
+  padding: pxToVW(8) !important;
+  .Toastify__close-button {
+    svg {
+      height: pxToVW(16) !important;
+      width: pxToVW(14) !important;
+    }
+  }
+}
+img {
+  pointer-events: none;
+}
+
+span.delete {
+  font-weight: $bold;
+}

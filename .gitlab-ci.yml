@@ -1,0 +1,53 @@
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules
+
+
+stages:
+  - build
+  - deploy
+
+build:
+  image: amazonlinux
+  stage: build
+  only:
+    - dev
+  allow_failure: false
+  script:
+    - yum update -y
+    - yum -y install curl
+    - curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+    - yum install -y nodejs
+    - yum -y install gcc-c++ make
+    - node -v
+    - npm -v
+    - yum install -y git
+    - git branch
+    - npm install
+    - npm run build
+    - cp -R ./build/* ./deployment/www/
+    - cd ./deployment
+    - yum install -y zip
+    - zip ../audiobook-reactjs.zip -r *
+    - ls
+    - cd ..
+    - ls
+  artifacts:
+    paths:
+      - /builds/woongjin/ddalgikong_app
+
+deploy:
+  image: coxauto/aws-ebcli
+  stage: deploy
+  only:
+    - dev
+  script:
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws configure set region $AWS_EB_REGION
+    - aws s3 cp /builds/woongjin/ddalgikong_app/audiobook-reactjs.zip s3://elasticbeanstalk-ap-northeast-2-758418133406/audiobook-reactjs-$CI_PIPELINE_ID.zip
+    - aws elasticbeanstalk create-application-version --application-name vpc-az-eb-reactjs-app-v2 --version-label vpc-az-eb-reactjs-app-v2-source--$CI_PIPELINE_ID --source-bundle S3Bucket="elasticbeanstalk-ap-northeast-2-758418133406",S3Key="audiobook-reactjs-$CI_PIPELINE_ID.zip"
+    - aws elasticbeanstalk update-environment --application-name vpc-az-eb-reactjs-app-v2 --environment-name VpcAzEbReactjsAppV3-env --version-label vpc-az-eb-reactjs-app-v2-source--$CI_PIPELINE_ID
+  dependencies:
+    - build

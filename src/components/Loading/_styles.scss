@@ -1,0 +1,34 @@
+.icon-loading {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  div[aria-label='animation'] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: pxToVW(40) !important;
+    height: pxToVW(40) !important;
+  }
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: pxToVW(38);
+    height: pxToVW(38);
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  @media (min-width: 640px) {
+    img {
+      width: responsiveTablet(38);
+      height: responsiveTablet(38);
+    }
+  }
+}

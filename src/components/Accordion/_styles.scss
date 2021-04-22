@@ -1,0 +1,51 @@
+.card-header {
+  padding: 0;
+
+  &__title {
+    padding: pxToVW(15);
+    position: relative;
+    cursor: pointer;
+
+    &__sub {
+      h4 {
+        font-weight: $bold;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border: 0;
+    }
+  }
+
+  &__icon-arrow {
+    transition: 0.5s;
+    position: absolute;
+    right: pxToVW(15);
+    max-width: pxToVW(13);
+    height: pxToVW(8);
+    transform: rotate(-180deg);
+    top: 50%;
+
+    &--up {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      top: 50%;
+    }
+  }
+}
+
+
+@media (min-width: 640px) {
+  .card-header {
+
+    &__title {
+      padding: responsiveTablet(15);
+    }
+
+    &__icon-arrow {
+      right: responsiveTablet(15);
+      max-width: responsiveTablet(13);
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.input {
+
+  &__wrapper {
+
+    .input__label {
+      font-size: pxToVW(12);
+      font-weight: $medium;
+      line-height: pxToVW(18);
+      color: $color-black;
+      margin-bottom: pxToVW(5);
+      display: flex;
+    }
+
+    .input__box {
+      position: relative;
+      display: block;
+
+      &.left {
+        .input {
+          padding-left: pxToVW(30);
+        }
+      }
+
+      input {
+        border: pxToVW(1) solid $gallery;
+        height: pxToVW(40);
+        display: block;
+        font-size: pxToVW(14);
+        padding: pxToVW(10);
+        color: $popup-txt;
+        letter-spacing: pxToVW(-0.28);
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: $regular;
+        position: relative;
+
+        &::-webkit-input-placeholder {
+          color: $color-placeholder;
+          font-weight: $light;
+          font-size: pxToVW(14);
+          line-height: pxToVW(20);
+          letter-spacing: pxToVW(-0.38);
+        }
+
+        &::placeholder {
+          color: $color-placeholder;
+          font-weight: $light;
+          font-size: pxToVW(14);
+          line-height: pxToVW(20);
+          letter-spacing: pxToVW(-0.38);
+        }
+
+        &::-moz-placeholder {
+          color: $color-placeholder;
+          font-weight: $light;
+          font-size: pxToVW(14);
+          line-height: pxToVW(20);
+          letter-spacing: pxToVW(-0.38);
+        }
+
+        &:-ms-input-placeholder {
+          color: $color-placeholder;
+          font-weight: $light;
+          font-size: pxToVW(14);
+          line-height: pxToVW(20);
+          letter-spacing: pxToVW(-0.38);
+        }
+
+        &:focus {
+          border: pxToVW(1) solid $blue-2;
+          outline: none;
+        }
+      }
+
+      img {
+        position: absolute;
+        width: pxToVW(20);
+        height: pxToVW(20);
+        right: 0;
+        top: pxToVW(10);
+        pointer-events: all;
+      }
+    }
+
+    .error-msg{
+      font-size: pxToVW(12);
+      line-height: pxToVW(18);
+      color: $text-box-active;
+      font-weight: $medium;
+      letter-spacing: pxToVW(-0.24);
+      position: absolute;
+    }
+  }
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,260 @@
+.myPage {
+  position: relative;
+  top: pxToVW(49);
+  padding-bottom: pxToVW(20);
+
+  &__list-wrapper {
+    padding: pxToVW(20) pxToVW(15) pxToVW(15);
+
+    ul {
+      li {
+        border-top: pxToVW(1) solid $gallery;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .sub-button {
+          font-size: pxToVW(10);
+          line-height: pxToVW(15);
+          letter-spacing: pxToVW(-0.2);
+          font-weight: $light;
+          padding-right: pxToVW(5);
+        }
+
+        .toggle-button {
+          padding-top: pxToVW(13);
+        }
+
+        .button-right {
+          text-align: right;
+          h3 {
+            font-size: pxToVW(12);
+            line-height: pxToVW(14);
+            letter-spacing: pxToVW(-0.24);
+            font-weight: $medium;
+          }
+          p {
+            font-size: pxToVW(10);
+            line-height: pxToVW(15);
+            letter-spacing: pxToVW(-0.2);
+            font-weight: $light;
+            padding-top: pxToVW(2);
+          }
+        }
+
+        &:last-child {
+          border-bottom: pxToVW(1) solid $gallery;
+        }
+
+        button {
+          background-color: transparent;
+          color: $popup-txt;
+          font-weight: $medium;
+          height: auto;
+          padding: pxToVW(13) 0;
+          font-size: pxToVW(14);
+          line-height: pxToVW(20);
+          letter-spacing: pxToVW(-0.24);
+          // width: 100%;
+        }
+
+        img {
+          width: pxToVW(12);
+          height: pxToVW(12);
+        }
+      }
+    }
+  }
+
+  &__btn-action {
+    padding: pxToVW(35) pxToVW(15) 0;
+
+    button {
+      width: 100%;
+      background-color: transparent;
+      color: $color-light;
+      font-size: pxToVW(15);
+      line-height: pxToVW(22);
+      letter-spacing: pxToVW(-0.3);
+      padding: pxToVW(10) 0;
+      border: pxToVW(1) solid $border-button;
+      font-weight: $light;
+      height: pxToVW(42);
+    }
+  }
+
+  .box-policy {
+    display: flex;
+    justify-content: center;
+    padding-top: pxToVW(30);
+    p {
+      font-size: pxToVW(12);
+      letter-spacing: pxToVW(-0.24);
+      line-height: pxToVW(18);
+      font-weight: $light;
+      color: $color-input;
+      &:first-child {
+        padding-right: pxToVW(7);
+        position: relative;
+        &::after{
+          position: absolute;
+          content: '';
+          width: pxToVW(1);
+          height: pxToVW(8);
+          background-color: $color-input;
+          top: pxToVW(5);
+          right: pxToVW(-1);
+        }
+      }
+      &:last-child{
+        padding-left: pxToVW(7);
+      }
+    }
+  }
+}
+
+.page-terms {
+  padding: pxToVW(52) pxToVW(15) 0;
+
+  h2 {
+    font-size: pxToVW(14);
+    line-height: pxToVW(20);
+    letter-spacing: pxToVW(-0.28);
+    color: $black-light;
+    font-weight: $bold;
+    padding-top: pxToVW(20);
+    padding-bottom: pxToVW(8);
+  }
+
+  p {
+    color: $popup-btn-left;
+    font-size: pxToVW(14);
+    line-height: pxToVW(20);
+    letter-spacing: pxToVW(-0.28);
+    font-weight: $medium;
+    padding-bottom: pxToVW(10);
+  }
+  table{
+    margin-top: pxToVW(10);
+    thead{
+      th{
+        background-color: #b8b8b8;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+    tbody{
+      tr{
+        td{
+          vertical-align: middle;
+          font-size: pxToVW(12);
+        }
+      }
+    }
+  }
+}
+
+// Responsive Tablet
+@media (min-width: 640px) {
+  .myPage {
+    top: responsiveTablet(49);
+
+    &__list-wrapper {
+      padding: responsiveTablet(20) responsiveTablet(15) responsiveTablet(15);
+
+      ul {
+        li {
+          button {
+            padding: responsiveTablet(13) 0;
+            font-size: responsiveTablet(14);
+            line-height: responsiveTablet(20);
+          }
+
+          img {
+            width: responsiveTablet(12);
+            height: responsiveTablet(12);
+          }
+        }
+      }
+    }
+
+    &__btn-action {
+      padding: responsiveTablet(35) responsiveTablet(15) 0;
+
+      button {
+        font-size: responsiveTablet(15);
+        line-height: responsiveTablet(22);
+        padding: responsiveTablet(10) 0;
+        height: responsiveTablet(42);
+      }
+    }
+  }
+
+  .page-terms {
+    padding: responsiveTablet(52) responsiveTablet(15) 0;
+
+    h2 {
+      font-size: responsiveTablet(14);
+      line-height: responsiveTablet(20);
+      padding-top: responsiveTablet(20);
+    }
+
+    p {
+      font-size: responsiveTablet(14);
+      line-height: responsiveTablet(20);
+    }
+  }
+}
+
+.form-signup-page.coupon {
+  position: relative;
+  height: 100vh;
+  h1 {
+    text-align: left;
+    padding-bottom: pxToVW(8);
+    font-size: pxToVW(14);
+    line-height: pxToVW(20);
+    letter-spacing: pxToVW(-0.28);
+    font-weight: $medium;
+  }
+  .box-coupon {
+    display: block;
+    .input__wrapper {
+      padding-bottom: 0;
+
+      .input__box {
+        width: 100%;
+
+        input {
+          font-weight: $medium;
+        }
+      }
+    }
+
+    .note-coupon {
+      padding-top: pxToVW(5);
+      font-size: pxToVW(12);
+      line-height: pxToVW(18);
+      letter-spacing: pxToVW(-0.24);
+      font-weight: $regular;
+      color: $popup-btn-left;
+    }
+
+    button.check-coupon {
+      margin-bottom: pxToVW(30);
+      width: pxToVW(330);
+      height: pxToVW(53);
+      padding: pxToVW(14) auto;
+      position: absolute;
+      bottom: 0;
+      background-color: $text-box-active !important;
+      border-radius: pxToVW(27);
+      border: 0;
+      cursor: pointer;
+
+      p {
+        color: $white;
+      }
+    }
+  }
+}

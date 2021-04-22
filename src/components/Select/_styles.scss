@@ -1,0 +1,427 @@
+.input__box {
+  text-align: left;
+
+  .css-1pahdxg-control {
+    min-height: auto;
+    max-height: initial;
+    box-shadow: none;
+    border-color: transparent;
+    background-color: transparent;
+
+    * {
+      background-color: transparent;
+    }
+  }
+}
+
+.react-datepicker__header {
+  padding-bottom: pxToVW(8);
+}
+
+.react-datepicker__header__dropdown {
+  display: flex;
+  justify-content: center;
+}
+
+.react-datepicker__month-select {
+  padding: pxToVW(5);
+}
+
+.react-datepicker__year-select {
+  padding: pxToVW(5);
+}
+
+.customer-select {
+  line-height: pxToVW(30);
+
+  .error-msg {
+    margin-top: pxToVW(5);
+    margin-bottom: pxToVW(5);
+    line-height: pxToVW(16);
+  }
+
+  .input__box {
+    position: relative;
+
+    .private {
+      position: absolute;
+      left: pxToVW(10);
+      top: 47%;
+      transform: translateY(-47%);
+
+      img {
+        width: pxToVW(14);
+        height: pxToVW(14);
+        margin-right: pxToVW(5);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      background-image: url('../../assets/icons/chevron_down.svg');
+      background-repeat: no-repeat;
+      width: pxToVW(13);
+      height: pxToVW(8);
+      top: 50%;
+      @include transform-translateY(-50%);
+      right: pxToVW(15);
+      left: auto;
+      background-size: cover;
+      @include transition(0.3s);
+    }
+
+    &.down {
+      &::before {
+        @include rotate(180deg);
+        top: calc(50% - #{pxToVW(4)});
+      }
+    }
+  }
+  .css-g1d714-ValueContainer {
+    padding: 0;
+  }
+  .css-1wa3eu0-placeholder,
+  .css-1uccc91-singleValue {
+    padding-left: pxToVW(10);
+  }
+}
+
+.css-tlfecz-indicatorContainer {
+  max-height: pxToVW(35);
+}
+
+body .customer-select {
+  .input__label {
+    font-size: pxToVW(12);
+    font-weight: $medium;
+    line-height: pxToVW(20);
+    margin-bottom: pxToVW(5);
+    display: flex;
+  }
+
+  .css-1uccc91-singleValue {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: pxToVW(30);
+    padding-right: pxToVW(30);
+  }
+
+  .css-yk16xz-control {
+    min-height: pxToVW(40);
+    max-height: pxToVW(40);
+    border: pxToVW(1) solid $silver;
+    background-color: transparent;
+    position: relative;
+  }
+
+  .input__box {
+    position: relative;
+    background: transparent;
+
+    input {
+      font-size: pxToVW(13);
+      color: $black-light-3;
+
+      &::-webkit-input-placeholder {
+        color: $color-placeholder;
+        font-weight: $light;
+        font-size: pxToVW(14);
+        line-height: pxToVW(20);
+        letter-spacing: pxToVW(-0.28);
+      }
+
+      &::placeholder {
+        color: $color-placeholder;
+        font-weight: $light;
+        font-size: pxToVW(14);
+        line-height: pxToVW(20);
+        letter-spacing: pxToVW(-0.28);
+      }
+
+      &::-moz-placeholder {
+        color: $color-placeholder;
+        font-weight: $light;
+        font-size: pxToVW(14);
+        line-height: pxToVW(20);
+        letter-spacing: pxToVW(-0.28);
+      }
+
+      &:-ms-input-placeholder {
+        color: $color-placeholder;
+        font-weight: $light;
+        font-size: pxToVW(14);
+        line-height: pxToVW(20);
+        letter-spacing: pxToVW(-0.28);
+      }
+    }
+
+    .css-1hb7zxy-IndicatorsContainer {
+      display: none;
+    }
+
+    .icon__wrapper {
+      position: absolute;
+      top: 50%;
+      right: pxToVW(15);
+      z-index: -1;
+      @include transform-translateY(-50%);
+
+      .icon {
+        width: pxToVW(13);
+        height: pxToVW(13);
+      }
+    }
+  }
+
+  .css-1uccc91-singleValue {
+    top: 50%;
+    @include transform-translateY(-50%);
+    
+  }
+
+  .css-1okebmr-indicatorSeparator {
+    display: none;
+  }
+
+  .css-1pahdxg-control {
+    min-height: pxToVW(40);
+    max-height: pxToVW(40);
+    box-shadow: none;
+    border-color: $bor-input;
+  }
+
+  .css-tlfecz-indicatorContainer {
+    padding: pxToVW(7) pxToVW(8);
+  }
+
+  .css-26l3qy-menu {
+    z-index: 10;
+    margin-bottom: pxToVW(60);
+  }
+}
+
+.customer-select.selectFilter {
+  min-width: pxToVW(80);
+  width: 100%;
+  position: relative;
+
+  .input__box {
+    div:nth-child(1) {
+      svg {
+        display: none;
+      }
+    }
+  }
+
+  .css-2b097c-container {
+    .css-26l3qy-menu {
+      > div > div {
+        line-height: 1.4;
+      }
+    }
+  }
+
+  &.selectStatus {
+    min-width: pxToVW(45);
+    padding-left: pxToVW(5);
+
+    &:before {
+      content: '';
+      width: pxToVW(1);
+      height: pxToVW(10);
+      background-color: $hummer;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .css-g1d714-ValueContainer,
+    .css-1uccc91-singleValue {
+      // position: relative;
+      min-width: pxToVW(35);
+      max-width: 100%;
+      text-align: right;
+      margin: 0;
+      line-height: 1;
+      height: pxToVW(18);
+      vertical-align: bottom;
+      display: flex;
+      align-items: flex-end;
+      padding-left: pxToVW(10);
+    }
+
+    .css-2b097c-container {
+      .css-26l3qy-menu {
+        right: 0;
+        min-width: pxToVW(100);
+      }
+    }
+
+    .css-g1d714-ValueContainer,
+    .css-1uccc91-singleValue {
+      height: pxToVW(18);
+      line-height: pxToVW(16);
+      font-weight: $light;
+      font-family: $Noto-Sans-Font;
+      color: $color-black;
+      right: 0;
+      padding-right: pxToVW(10);
+      display: flex;
+      align-items: flex-end;
+      padding-left: pxToVW(10);
+    }
+  }
+
+  .css-g1d714-ValueContainer,
+  .css-1uccc91-singleValue {
+    height: pxToVW(18);
+    line-height: pxToVW(16);
+    font-weight: $light;
+    font-family: $Noto-Sans-Font;
+    color: $color-black;
+    right: 0;
+    padding-right: pxToVW(10);
+    display: flex;
+    align-items: flex-end;
+    padding-left: pxToVW(10);
+  }
+
+  .input__box {
+    white-space: nowrap;
+
+    .icon__wrapper {
+      right: 0;
+
+      .icon {
+        width: pxToVW(10);
+        height: pxToVW(10);
+        position: relative;
+        top: pxToVW(2);
+      }
+    }
+
+    .css-yk16xz-control {
+      border-color: transparent;
+      min-height: auto;
+      max-height: inherit;
+      margin: 0;
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+    }
+
+    .css-1pahdxg-control {
+      min-height: auto;
+      max-height: initial;
+      box-shadow: none;
+      border-color: transparent;
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+
+      * {
+        background-color: transparent;
+      }
+    }
+
+    .css-g1d714-ValueContainer {
+      padding: 0;
+    }
+
+    .css-g1d714-ValueContainer {
+      padding: 0;
+    }
+
+    .css-tlfecz-indicatorContainer {
+      padding: pxToVW(0);
+    }
+  }
+
+  &.red {
+    .css-g1d714-ValueContainer,
+    .css-1uccc91-singleValue {
+      color: $red;
+    }
+  }
+
+  &.blue {
+    .css-g1d714-ValueContainer,
+    .css-1uccc91-singleValue {
+      color: $blue;
+    }
+  }
+
+  &.styleColor {
+    .css-2b097c-container {
+      .css-26l3qy-menu {
+        > div > div {
+          &:nth-child(2) {
+            color: $red;
+          }
+
+          &:nth-child(3) {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.css-4ljt47-MenuList {
+  padding: 0 !important;
+}
+
+.css-9gakcf-option {
+  background-color: $athens-gray-2 !important;
+  color: $black-light-3 !important;
+  border-top: pxToVW(1) solid $bor-input;
+  border-bottom: pxToVW(1) solid $bor-input;
+  font-weight: $medium;
+  padding: pxToVW(8) pxToVW(17) !important;
+  letter-spacing: pxToVW(-0.33);
+
+  &:nth-child(1) {
+    border-top: 0;
+  }
+}
+
+.css-9gakcf-option:active {
+  background-color: $athens-gray-2;
+}
+
+.css-yt9ioa-option,
+.css-1n7v3ny-option {
+  padding: pxToVW(8) pxToVW(17) !important;
+  letter-spacing: pxToVW(-0.33);
+}
+
+.css-1n7v3ny-option {
+  background-color: transparent !important;
+}
+
+.css-4ljt47-MenuList {
+  max-height: pxToVW(220) !important;
+}
+
+.css-1wa3eu0-placeholder {
+  color: $color-placeholder !important;
+  font-weight: $light;
+  font-size: pxToVW(14);
+  line-height: pxToVW(20);
+  letter-spacing: pxToVW(-0.38);
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      padding-left: pxToVW(5);
+    }
+  }
+}
+
+body .css-2b097c-container {
+  z-index: 1000;
+}

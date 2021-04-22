@@ -1,0 +1,285 @@
+.page-advisory {
+  padding: pxToVW(49) pxToVW(15);
+  
+
+  .checkbox .checkbox__label {
+    top: 0;
+  }
+
+  .btn-consultation {
+    width: pxToVW(86);
+    height: pxToVW(86);
+    color: #fff;
+    background-color: $text-box-active;
+    line-height: pxToVW(20);
+    font-size: pxToVW(14);
+    padding-top: pxToVW(25);
+    padding-bottom: pxToVW(24);
+    border-radius: 50%;
+    letter-spacing: pxToVW(-0.28);
+    font-weight: $regular;
+    position: fixed;
+    right: pxToVW(15);
+    bottom: pxToVW(80);
+  }
+
+  .title-advisory {
+    margin-top: pxToVW(20);
+    font-weight: $bold;
+    font-size: pxToVW(17);
+    line-height: pxToVW(25);
+    letter-spacing: pxToVW(-0.34);
+    color: $black-light;
+    margin-bottom: pxToVW(15);
+  }
+
+  .sub-title {
+    font-size: pxToVW(14);
+    line-height: pxToVW(20);
+    color: $black-light;
+    margin-bottom: pxToVW(8);
+    font-weight: $medium;
+  }
+
+  .item {
+    padding-top: pxToVW(13);
+    padding-bottom: pxToVW(13);
+    position: relative;
+    border-top: pxToVW(1) solid $silver;
+    padding-left: pxToVW(5);
+
+    .wrap-content {
+      padding-left: 0;
+      transition: all 0.3s ease;
+    }
+
+    &.open {
+      .wrap-content {
+        padding-left: pxToVW(25);
+      }
+
+      .checkbox {
+        opacity: 1;
+        visibility: visible;
+        display: block;
+      }
+    }
+
+    .checkbox {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      display: none;
+      height: 0;
+    }
+
+    &:last-child {
+      border-bottom: pxToVW(1) solid $silver;
+      margin-bottom: pxToVW(110);
+    }
+
+    .icon {
+      position: absolute;
+      right: pxToVW(4);
+      width: pxToVW(12);
+      height: pxToVW(12);
+      bottom: pxToVW(18);
+    }
+
+    .status {
+      border: pxToVW(1) solid $bg-opacity-primary-5;
+      display: inline-block;
+      padding: 0 pxToVW(4);
+      line-height: pxToVW(17.4);
+      color: $bg-button-primary;
+      font-size: pxToVW(10);
+      letter-spacing: pxToVW(-0.2);
+      min-width: pxToVW(50);
+
+      &.active {
+        background-color: $bg-opacity-primary-5;
+        border: 0;
+        line-height: pxToVW(19);
+        color: $white;
+      }
+    }
+
+    .wrapper-title {
+      padding-right: pxToVW(5);
+    }
+
+    .category {
+      width: calc(100% - #{pxToVW(100)});
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: $medium;
+      font-size: pxToVW(12);
+      line-height: pxToVW(18);
+      letter-spacing: pxToVW(-0.24);
+      color: $black-light;
+      padding-left: pxToVW(8);
+    }
+
+    .date {
+      color: $dove-gray;
+      font-size: pxToVW(12);
+      line-height: pxToVW(14);
+      letter-spacing: pxToVW(-0.24);
+    }
+
+    .title {
+      font-size: pxToVW(14);
+      line-height: pxToVW(20);
+      letter-spacing: pxToVW(-0.28);
+      color: $black-light;
+      margin-top: pxToVW(5);
+      font-weight: $medium;
+    }
+  }
+
+  &__register {
+    padding: pxToVW(52) 0 pxToVW(75);
+
+    &__form {
+      padding: 0 pxToVW(15) 0;
+
+      &__title {
+        padding: pxToVW(20) 0 pxToVW(8);
+      }
+
+      &__note {
+        width: pxToVW(200);
+        display: inline-block;
+        margin-left: pxToVW(10);
+        font-size: pxToVW(12);
+        line-height: pxToVW(18);
+        letter-spacing: pxToVW(-0.24);
+        font-weight: $medium;
+      }
+
+      .customer-select {
+        margin-bottom: pxToVW(10);
+
+        .css-1uccc91-singleValue {
+          font-weight: $bold;
+          color: $black-light;
+        }
+      }
+
+      .input__wrapper {
+        margin-bottom: pxToVW(10);
+
+        input {
+          color: $black-light;
+          font-weight: $regular;
+        }
+      }
+
+      textarea {
+        width: 100%;
+        border: pxToVW(1) solid $gallery;
+        padding: pxToVW(10);
+        font-size: pxToVW(14);
+        line-height: pxToVW(20);
+        color: $black-light;
+        font-weight: $regular;
+
+        &::placeholder {
+          color: $popup-btn-left;
+          font-weight: $light;
+        }
+
+        &:focus {
+          outline: pxToVW(1) solid $btn-login;
+        }
+      }
+
+      button {
+        background-color: $white;
+        border: pxToVW(1) solid $btn-bg;
+        color: $btn-bg;
+        font-weight: $medium;
+        font-size: pxToVW(14);
+        letter-spacing: pxToVW(-0.28);
+        width: pxToVW(106);
+        height: pxToVW(40);
+        padding: 0;
+      }
+
+      &__btn-submit {
+        width: pxToVW(330);
+        margin-left: pxToVW(15);
+        border-radius: pxToVW(27);
+        margin-top: pxToVW(40);
+        background-color: $text-box-active;
+      }
+
+      .group-btn-upload {
+        margin-top: pxToVW(20);
+      }
+
+      &__imgUpload {
+        margin-top: pxToVW(10);
+        width: pxToVW(95);
+        height: pxToVW(95);
+        position: relative;
+
+        img {
+          border-radius: pxToVW(5);
+          height: 100%;
+          width: 100%;
+          pointer-events: all;
+        }
+
+        &--delete {
+          position: absolute;
+          width: pxToVW(20) !important;
+          height: pxToVW(20) !important;
+          right: 0;
+        }
+      }
+
+      &__answer {
+        padding: pxToVW(10) pxToVW(10) pxToVW(50);
+        border: pxToVW(1) solid $gallery;
+        margin-top: pxToVW(20);
+
+        &__top {
+          display: flex;
+          align-items: center;
+
+          &__title {
+            padding: pxToVW(5);
+            color: $white;
+            font-size: pxToVW(10);
+            font-weight: $regular;
+            line-height: pxToVW(15);
+            letter-spacing: pxToVW(-0.2);
+            background-color: $bg-button-primary;
+            border: pxToVW(1) solid $bg-button-primary;
+            opacity: 0.5;
+          }
+
+          p {
+            font-size: pxToVW(12);
+            font-weight: $regular;
+            line-height: pxToVW(14);
+            letter-spacing: pxToVW(-0.24);
+            color: $dove-gray;
+            padding-left: pxToVW(5);
+          }
+        }
+
+        pre {
+          padding-top: pxToVW(10);
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}

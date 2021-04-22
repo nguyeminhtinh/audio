@@ -1,0 +1,35 @@
+[ignore]
+.*/build/.*
+.*/node_modules/.*
+
+[include]
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.css
+module.file_ext=.scss
+module.system=haste
+sharedmemory.hash_table_pow=21
+sharedmemory.minimum_available=21474836480 
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+esproposal.optional_chaining=enable
+esproposal.nullish_coalescing=enable
+module.name_mapper.extension='svg' -> '<PROJECT_ROOT>/SVGModule.js.flow'
+module.name_mapper='^components' ->'<PROJECT_ROOT>/src/components'
+module.name_mapper='^commons' ->'<PROJECT_ROOT>/src/commons'
+module.name_mapper='^constants' ->'<PROJECT_ROOT>/src/constants'
+module.name_mapper='^themes' ->'<PROJECT_ROOT>/src/themes'
+module.name_mapper='^mockData' ->'<PROJECT_ROOT>/src/mockData'
+module.name_mapper='^apis' ->'<PROJECT_ROOT>/src/apis'
+module.name_mapper='^helpers' ->'<PROJECT_ROOT>/src/helpers'
+module.name_mapper='^layout' ->'<PROJECT_ROOT>/src/layout'
+module.name_mapper='^screens' ->'<PROJECT_ROOT>/src/screens'
+[strict]

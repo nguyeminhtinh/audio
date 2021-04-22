@@ -1,0 +1,324 @@
+.modal {
+  z-index: 999999;
+
+  &.index-9998 {
+    z-index: 9998;
+  }
+
+  .modal-dialog {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 pxToVW(30);
+    margin: 0;
+    max-width: pxToVW(500);
+    min-height: pxToVW(800);
+  }
+}
+
+.modal-backdrop {
+  &.show {
+    opacity: 0.6;
+    position: fixed;
+    z-index: 100000;
+  }
+}
+
+.modal-content {
+  // margin-top: pxToVW(45);
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: $popup-txt;
+  padding: 0;
+  border: none;
+  border-radius: pxToVW(10);
+
+  &__iconClose {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: pxToVW(-55);
+    width: pxToVW(33);
+    height: pxToVW(33);
+
+    &:focus {
+      outline: none;
+    }
+
+    img {
+      width: pxToVW(33);
+      height: pxToVW(33);
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .modal-title {
+    width: 100%;
+    font-size: pxToVW(15);
+    font-weight: $bold;
+    line-height: pxToVW(22);
+    letter-spacing: pxToVW(-0.38);
+    color: $black-active;
+    padding: pxToVW(20) pxToVW(0);
+  }
+
+  .modal-body {
+    width: 100%;
+    white-space: pre-line;
+    padding: 0 pxToVW(20);
+    margin: 0;
+
+    &__has-header {
+      padding: 0 0 pxToVW(30);
+      font-size: pxToVW(14);
+      line-height: pxToVW(20);
+      letter-spacing: pxToVW(-0.28);
+      color: $popup-txt;
+
+      .title-content {
+        font-weight: $light;
+      }
+    }
+
+    &__no-header {
+      padding: pxToVW(44) 0;
+      font-size: pxToVW(14);
+    }
+
+    .content {
+      font-size: pxToVW(13);
+      font-weight: $light;
+      line-height: pxToVW(18);
+      letter-spacing: pxToVW(-0.46);
+      text-align: center;
+
+      &--login-success {
+        img {
+          margin-bottom: pxToVW(20);
+          width: pxToVW(280);
+          height: pxToVW(149);
+        }
+
+        p {
+          // @include fontSize(#{pxToVW(20)}, $bold);
+          font-size: pxToVW(20);
+          line-height: pxToVW(27);
+          letter-spacing: pxToVW(-0.71);
+          color: $popup-txt;
+          margin: 0;
+
+          &.text-welcome {
+            width: 100%;
+            padding-bottom: pxToVW(14);
+          }
+
+          &.pointSuccess {
+            width: pxToVW(190);
+          }
+        }
+
+        h2 {
+          font-size: pxToVW(25);
+          line-height: pxToVW(27);
+          // color: $btn-bg;
+          font-weight: $bold;
+        }
+
+        h3 {
+          // @include fontSize(#{pxToVW(13)}, $regular);
+          line-height: pxToVW(18);
+          letter-spacing: pxToVW(-0.46);
+          color: $popup-txt;
+
+          &.text-middle {
+            padding-bottom: pxToVW(15);
+          }
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    width: 100%;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: $white;
+    border: none;
+    padding: 0;
+    // border-top: 1px solid $popup-border;
+    border-bottom-right-radius: pxToVW(10);
+    border-bottom-left-radius: pxToVW(10);
+    position: relative;
+    z-index: 999;
+
+    .group-button {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .button {
+      height: pxToVW(50);
+      font-size: pxToVW(14);
+      line-height: pxToVW(20);
+      letter-spacing: pxToVW(-0.28);
+      padding: 0;
+      background-color: $text-box-active;
+      color: $white;
+      border-bottom-right-radius: pxToVW(10);
+      border-bottom-left-radius: pxToVW(10);
+
+      &.buttonConfirm {
+        font-weight: $bold;
+      }
+
+      &.btn-left {
+        background-color: $bg-cancel;
+        border-bottom-right-radius: 0;
+      }
+
+      &.btn-right {
+        color: $white;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+.modal-footer > * {
+  margin: 0;
+}
+
+.modal-edit {
+  .modal-content {
+    .modal-body {
+      padding: pxToVW(6) 0;
+      // height: pxToVW(265);
+      width: pxToVW(300);
+
+      &__no-header {
+        padding: 0;
+        overflow-y: hidden;
+
+        .item-edit {
+          font-size: pxToVW(13);
+          line-height: pxToVW(19);
+          letter-spacing: pxToVW(-0.33);
+          color: $dove-gray;
+          font-weight: $regular;
+          padding: pxToVW(15) 0 pxToVW(14);
+          border-bottom: pxToVW(1) solid $popup-border;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &.active {
+            background-color: rgba($btn-bg, 0.05);
+            color: $btn-bg;
+            font-weight: $bold;
+          }
+        }
+
+        .title-content {
+          max-height: pxToVW(245);
+          overflow: auto;
+          padding-top: pxToVW(7);
+          &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.3);
+            background-color: $regular;
+            padding: 0;
+          }
+
+          &::-webkit-scrollbar {
+            width: 0;
+            padding: 0;
+            background-color: $regular;
+            height: 0;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: $regular;
+            border: 0 solid $regular;
+            padding: 0;
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-open {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.modal.modal-open {
+  position: fixed;
+}
+
+.modal.my-playlist {
+  .modal-dialog {
+    .modal-content {
+      top: 45%;
+      transform: scale(0.9) translateY(-55%);
+      @media screen and (width: 540px), (width: 768px), (width: 1024px) {
+        top: 40%;
+        transform: scale(0.7) translateY(-60%);
+      }
+
+      @media screen and (max-height: 500px) {
+        margin-top: pxToVW(120);
+      }
+
+      .modal-body {
+        padding: 0 pxToVW(10);
+        max-height: pxToVW(415);
+        overflow: auto;
+
+        .popup-my .popup-group .input__box input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.btn-payment-strawberry {
+  font-weight: $medium;
+  p:nth-child(1) {
+    font-size: pxToVW(14);
+    line-height: pxToVW(20);
+    letter-spacing: pxToVW(-0.28);
+  }
+
+  p:nth-child(2) {
+    font-size: pxToVW(10);
+    line-height: pxToVW(15);
+    letter-spacing: pxToVW(-0.2);
+
+    span {
+      text-decoration: line-through;
+    }
+
+    .icon-nextpage {
+      width: pxToVW(6);
+      height: pxToVW(6);
+      margin: 0 pxToVW(5);
+      filter: brightness(2);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "es6",
+    "module": "commonjs",
+    "paths": {
+      "assets/*": ["./src/assets"],
+      "constants/*": ["./src/constants"],
+      "themes/*": ["./src/themes"],
+      "commons/*": ["./src/commons/"],
+      "helpers/*": ["./src/helpers/"],
+      "layout/*": ["./src/layout/"],
+      "screens/*": ["./src/screens/"]
+    }
+  },
+  "include": ["src"]
+}

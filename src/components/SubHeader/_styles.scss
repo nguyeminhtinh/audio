@@ -1,0 +1,145 @@
+.app-sub-header {
+  a {
+    font-size: pxToVW(20);
+    line-height: 1.45;
+    letter-spacing: pxToVW(-0.35);
+    color: $color-black;
+  }
+
+  &.bg-main {
+    * {
+      color: #ffffff;
+    }
+  }
+
+  &__content {
+    padding: pxToVW(15) pxToVW(20) pxToVW(14);
+    font-family: $Noto-Sans-Font;
+    font-weight: $regular;
+    position: relative;
+    margin-bottom: pxToVW(-1);
+
+    &--center {
+      justify-content: center;
+    }
+
+    &--center>div .icon__wrapper {
+      position: absolute;
+      left: pxToVW(20);
+      top: auto;
+    }
+
+    &__ico {
+      a {
+        display: block;
+      }
+
+      .icon__wrapper {
+        top: pxToVW(1);
+      }
+
+      .icon {
+        width: pxToVW(14);
+        height: pxToVW(14);
+        margin-right: pxToVW(5);
+      }
+    }
+
+    &__text {
+      font-size: pxToVW(20);
+      line-height: pxToVW(29);
+      letter-spacing: pxToVW(-0.5);
+
+      &--100 {
+        font-weight: $thin;
+      }
+
+      &--200 {
+        font-weight: $extraLight;
+      }
+
+      &--300 {
+        font-weight: $light;
+      }
+
+      &--400 {
+        font-weight: $medium;
+      }
+
+      &--500 {
+        font-weight: $bold;
+      }
+
+      &--600 {
+        font-weight: $semiBold;
+      }
+
+      &--700 {
+        font-weight: $bold;
+      }
+
+      &--800 {
+        font-weight: $extraBold;
+      }
+
+      &--900 {
+        font-weight: $black;
+      }
+    }
+
+    &__right {
+      position: absolute;
+      right: pxToVW(15);
+
+      &__group-ico {
+        .icon {
+          width: pxToVW(20);
+          height: pxToVW(20);
+          margin-right: pxToVW(5);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+
+  .app-sub-header {
+    a {
+      font-size: responsiveTablet(20);
+    }
+
+    &__content {
+      padding: responsiveTablet(15) responsiveTablet(20) responsiveTablet(14);
+
+      &--center>div .icon__wrapper {
+        left: responsiveTablet(20);
+      }
+
+      &__ico {
+
+        .icon {
+          width: responsiveTablet(14);
+          height: responsiveTablet(14);
+        }
+      }
+
+      &__text {
+        font-size: responsiveTablet(20);
+        line-height: responsiveTablet(29);
+      }
+
+      &__right {
+        right: responsiveTablet(15);
+
+        &__group-ico {
+          .icon {
+            width: responsiveTablet(20);
+            height: responsiveTablet(20);
+          }
+        }
+      }
+    }
+  }
+}

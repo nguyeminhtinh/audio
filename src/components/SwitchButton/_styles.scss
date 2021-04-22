@@ -1,0 +1,117 @@
+.toggle-switch {
+  position: relative;
+  width: pxToVW(42);
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  text-align: left;
+
+  @media (min-width: 640px) {
+    width: responsiveTablet(42);
+  }
+}
+
+.toggle-switch-checkbox {
+  display: none;
+}
+
+.toggle-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: pxToVW(20);
+  margin: 0;
+
+  @media (min-width: 640px) {
+    border-radius: responsiveTablet(20);
+  }
+}
+
+.toggle-switch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  @include transition(0.3s ease-in 0s);
+
+  &::before,
+  &::after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: pxToVW(20);
+    padding: 0;
+    line-height: pxToVW(20);
+    font-size: pxToVW(10);
+    color: $white;
+    box-sizing: border-box;
+    font-family: 'Roboto Regular';
+    text-transform: uppercase;
+    letter-spacing: pxToVW(-0.25);
+  }
+
+  &:before {
+    content: "ON";
+    padding-left: pxToVW(6);
+    background-color: $blue-2;
+    color: $white;
+  }
+
+  @media (min-width: 640px) {
+    border-radius: responsiveTablet(20);
+
+    &::before,
+    &::after {
+      height: responsiveTablet(20);
+      line-height: responsiveTablet(20);
+    }
+  }
+}
+
+.toggle-switch-disabled {
+  background-color: $hummer;
+  cursor: not-allowed;
+
+  &::before {
+    background-color: $hummer;
+    cursor: not-allowed;
+  }
+}
+
+.toggle-switch-inner::after {
+  content: "OFF";
+  padding-right: pxToVW(5);
+  background-color: $hummer;
+  color: $white;
+  text-align: right;
+}
+
+.toggle-switch-switch {
+  display: block;
+  width: pxToVW(13);
+  margin: pxToVW(4);
+  background: $white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border: 0 solid $hummer;
+  border-radius: pxToVW(20);
+  @include transition(0.5s);
+
+  @media (min-width: 640px) {
+    border-radius: responsiveTablet(20);
+  }
+}
+
+.toggle-switch-checkbox:checked+.toggle-switch-label {
+  .toggle-switch-inner {
+    margin-left: 0;
+  }
+
+  .toggle-switch-switch {
+    right: 0;
+    left: auto;
+  }
+}

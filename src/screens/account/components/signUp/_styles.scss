@@ -1,0 +1,264 @@
+.signup-page {
+  padding: 0 pxToVW(15);
+  background-color: $color-border;
+  height: 100vh;
+  &__step1 {
+    padding: pxToVW(70) pxToVW(15) pxToVW(30);
+  }
+  &__top {
+    padding-top: pxToVW(130);
+    text-align: center;
+    padding-bottom: pxToVW(135);
+    div[aria-label='animation'] {
+      width: pxToVW(110) !important;
+      position: relative;
+    }
+    img {
+      width: pxToVW(110);
+      height: pxToVW(115);
+    }
+  }
+  .btn-login-email {
+    width: 100%;
+    background-color: $white;
+    color: $text-box-active;
+    font-size: pxToVW(15);
+    margin-bottom: pxToVW(10);
+    border-radius: pxToVW(25);
+    font-weight: $bold;
+  }
+  .btn-member {
+    width: 100%;
+    background-color: transparent;
+    color: $white;
+    font-size: pxToVW(15);
+    border: pxToVW(1) solid $white;
+    border-radius: pxToVW(25);
+    font-weight: $bold;
+  }
+  .login-social {
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    padding-top: pxToVW(27);
+    p {
+      font-size: pxToVW(14);
+      line-height: pxToVW(20);
+      letter-spacing: pxToVW(-0.28);
+      font-weight: $regular;
+      position: relative;
+      padding-right: pxToVW(20);
+      color: $white;
+      text-align: center;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: pxToVW(63);
+        height: pxToVW(1);
+        background-color: $white-opacity-3;
+        position: absolute;
+        left: pxToVW(50);
+        top: 50%;
+      }
+      &::before {
+        content: '';
+        display: inline-block;
+        width: pxToVW(63);
+        height: pxToVW(1);
+        background-color: $white-opacity-3;
+        position: absolute;
+        right: pxToVW(70);
+        top: 50%;
+      }
+    }
+    &__item {
+      display: flex;
+      justify-content: center;
+      margin-top: pxToVW(20);
+
+      div {
+        margin-right: pxToVW(2);
+        margin-left: pxToVW(2);
+      }
+      img {
+        width: pxToVW(50);
+        height: pxToVW(50);
+        margin-right: pxToVW(10);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.form-signup-page {
+  padding: pxToVW(70) pxToVW(15) pxToVW(30);
+  .input {
+    &__wrapper {
+      padding-bottom: pxToVW(30);
+    }
+    &__label {
+      font-size: pxToVW(14);
+      line-height: pxToVW(20);
+      letter-spacing: pxToVW(-0.28);
+      color: $black-light;
+      font-weight: $medium;
+      margin-bottom: pxToVW(8);
+    }
+  }
+  &__box-email {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .input__box {
+      width: 100%;
+    }
+    .button {
+      height: pxToVW(40);
+      width: pxToVW(106);
+      padding: 0;
+      background-color: transparent;
+      color: $bg-button-primary;
+      border: pxToVW(1) solid $bg-button-primary;
+      border-radius: 0;
+      font-size: pxToVW(14);
+      line-height: pxToVW(20);
+      letter-spacing: pxToVW(-0.28);
+    }
+  }
+  h2 {
+    font-size: pxToVW(18);
+    line-height: pxToVW(27);
+    letter-spacing: pxToVW(-0.36);
+    font-weight: $bold;
+    color: $black-light;
+    padding-bottom: pxToVW(5);
+  }
+  .btn-submit {
+    margin-top: pxToVW(45);
+    width: 100%;
+    border-radius: pxToVW(27);
+    background-color: $text-box-active;
+    color: $white;
+    height: pxToVW(53);
+    padding: 0;
+    font-weight: $regular;
+  }
+  .terms-condition {
+    &__wrapper {
+      margin-top: pxToVW(10);
+      p {
+        padding-top: pxToVW(5);
+        font-size: pxToVW(12);
+        line-height: pxToVW(18);
+        letter-spacing: pxToVW(-0.24);
+        font-weight: $light;
+        color: $black-light;
+        padding-bottom: pxToVW(10);
+        padding-left: pxToVW(25);
+      }
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: pxToVW(3);
+      padding: 0 pxToVW(25);
+      margin-bottom: pxToVW(10);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      .checkbox__label {
+        &::before {
+          border-radius: 50%;
+          width: pxToVW(18);
+          height: pxToVW(18);
+          top: pxToVW(1);
+        }
+        span {
+          font-size: pxToVW(12);
+          line-height: pxToVW(18);
+          letter-spacing: pxToVW(-0.24);
+          font-weight: $light;
+          color: $black-light;
+        }
+        &::after {
+          height: pxToVW(7);
+          width: pxToVW(11);
+          left: pxToVW(3);
+          top: pxToVW(6);
+          background-image: url('../../../../assets/images/checkbox_radio_on.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          border: 0;
+          transform: none;
+        }
+      }
+      &__label {
+        font-size: pxToVW(15);
+        line-height: pxToVW(22);
+        font-weight: $medium;
+        letter-spacing: pxToVW(-0.3);
+        bottom: pxToVW(1);
+        position: relative;
+        font-family: 'Noto Sans KR';
+      }
+
+      span {
+        font-size: pxToVW(13);
+        font-weight: $light;
+        line-height: pxToVW(19);
+        letter-spacing: pxToVW(-0.33);
+        color: #999;
+      }
+
+      span ~ div > label {
+        bottom: pxToVW(12);
+        margin-right: pxToVW(-5);
+      }
+    }
+    &__checkbox {
+      .checkbox__label {
+        &::before {
+          border-radius: 50%;
+          width: pxToVW(20);
+          height: pxToVW(20);
+          top: pxToVW(1);
+        }
+        &::after {
+          top: pxToVW(7);
+          left: pxToVW(4);
+          background-image: url('../../../../assets/images/checkbox_radio_on.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          border: 0;
+          height: pxToVW(7);
+          width: pxToVW(11);
+          transform: none;
+        }
+        span {
+          font-size: pxToVW(14);
+          line-height: pxToVW(20);
+        }
+      }
+    }
+  }
+  &__title {
+    font-size: pxToVW(12);
+    line-height: pxToVW(18);
+    letter-spacing: pxToVW(-0.24);
+    font-weight: $light;
+    color: $color-input;
+    padding-bottom: pxToVW(10);
+  }
+
+  .btn.check-email {
+    background-color: $white !important;
+  }
+
+  .text-check-email {
+    color: $bg-button-primary;
+  }
+}

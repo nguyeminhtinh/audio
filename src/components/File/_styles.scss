@@ -1,0 +1,78 @@
+.file-wrapper {
+  &__title {
+    margin-bottom: pxToVW(10);
+    font-weight: $medium;
+    font-size: pxToVW(12);
+    color: $black-active;
+  }
+
+  &__content {
+    display: inline-block;
+    position: relative;
+    height: pxToVW(56);
+    width: 100%;
+    border: pxToVW(1) solid $bor-input;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    &__name {
+      position: absolute;
+      left: pxToVW(15);
+      top: 50%;
+      width: calc(100% - #{pxToVW(30)});
+      background: transparent;
+      text-align: center;
+      border-radius: pxToVW(3);
+      font-size: pxToVW(16);
+      line-height: 1.5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include transform-translateY(-50%);
+
+      .icon {
+        width: pxToVW(14);
+        height: pxToVW(14);
+      }
+    }
+
+    &--custom {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}
+
+
+@media (min-width: 640px) {
+
+  .file-wrapper {
+    &__title {
+      margin-bottom: responsiveTablet(10);
+      font-weight: $medium;
+      font-size: responsiveTablet(12);
+    }
+
+    &__content {
+      height: responsiveTablet(56);
+
+      &__name {
+        left: responsiveTablet(15);
+        top: 50%;
+        width: calc(100% - #{responsiveTablet(30)});
+        font-size: responsiveTablet(16);
+
+        .icon {
+          width: responsiveTablet(14);
+          height: responsiveTablet(14);
+        }
+      }
+    }
+  }
+}

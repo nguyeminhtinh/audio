@@ -1,0 +1,255 @@
+.login-page {
+  background-color: $bg-login;
+  padding: 0 pxToVW(40);
+  padding-bottom: pxToVW(30);
+  z-index: 10000;
+  @media screen and (max-height: 250px) {
+    padding-bottom: pxToVW(520);
+  }
+
+  .form-login {
+    width: 100%;
+    &__top {
+      padding-top: pxToVW(60);
+      padding-bottom: pxToVW(48);
+      text-align: center;
+      &__intro {
+        width: pxToVW(84);
+        height: pxToVW(59);
+      }
+      &__intro-logo {
+        height: pxToVW(177);
+        margin-bottom: pxToVW(10);
+        display: block;
+      }
+    }
+    .logo {
+      margin: pxToVW(73) pxToVW(0) pxToVW(21) pxToVW(0);
+
+      div {
+        width: pxToVW(163) !important;
+        height: pxToVW(32) !important;
+      }
+    }
+
+    .input {
+      &__box {
+        margin-left: 0;
+        margin-bottom: pxToVW(5);
+
+        .input-change {
+          margin-left: 0;
+          background-color: transparent;
+          border: none;
+          border-bottom: pxToVW(1) solid $text-box-active-07 !important;
+          color: $text-box-active;
+          font-weight: $medium;
+          &::placeholder {
+            color: $text-box-active-05;
+          }
+          &:focus {
+            outline: none;
+            border: 0;
+          }
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+            background-color: transparent;
+          }
+        }
+
+        &.blur-input,
+        &.blur-input2 {
+          .icon-input {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .btn-login {
+      width: 100%;
+
+      button {
+        width: 100%;
+        margin-top: pxToVW(30);
+        height: pxToVW(40);
+        font-size: pxToVW(13);
+        border-radius: pxToVW(20);
+        padding: 0;
+        background-color: $text-box-active;
+        font-weight: $bold;
+      }
+    }
+
+    .btn-non-account {
+      button {
+        width: 100%;
+        margin-top: pxToVW(10);
+        height: pxToVW(40);
+        background-color: $gallery;
+        color: $color-black;
+        font-size: pxToVW(13);
+
+        &:active,
+        &:focus {
+          color: $bg-black-2;
+        }
+      }
+    }
+
+    .group-action {
+      margin-top: pxToVW(12);
+      display: flex;
+      justify-content: center;
+
+      p {
+        font-size: pxToVW(12);
+        line-height: pxToVW(18);
+        font-weight: $regular;
+        outline: none;
+        color: $dove-gray;
+
+        &::after {
+          content: '';
+          position: relative;
+          width: pxToVW(1);
+          height: pxToVW(8);
+          display: inline-block;
+          margin: pxToVW(0) pxToVW(15);
+          top: pxToVW(-1);
+          background-color: $color-input;
+        }
+
+        &:last-of-type {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .easy-login {
+      padding-top: pxToVW(80);
+      p {
+        font-size: pxToVW(14);
+        line-height: pxToVW(20);
+        letter-spacing: pxToVW(-0.28);
+        font-weight: $regular;
+        color: $color-black;
+        position: relative;
+        text-align: center;
+        margin-bottom: pxToVW(20);
+        &::after {
+          content: '';
+          display: inline-block;
+          width: pxToVW(63);
+          height: pxToVW(1);
+          background-color: $black-opacity-3;
+          position: absolute;
+          left: pxToVW(35);
+          top: 50%;
+        }
+        &::before {
+          content: '';
+          display: inline-block;
+          width: pxToVW(63);
+          height: pxToVW(1);
+          background-color: $black-opacity-3;
+          position: absolute;
+          right: pxToVW(35);
+          top: 50%;
+        }
+      }
+      &__group-action-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: pxToVW(50);
+          height: pxToVW(50);
+          margin-right: pxToVW(10);
+          pointer-events: all;
+        }
+      }
+    }
+  }
+}
+
+.signUp-modal {
+  &__title {
+    font-size: pxToVW(15);
+    font-weight: $bold;
+    letter-spacing: pxToVW(-0.38);
+    color: $black-active;
+    font-weight: $bold;
+  }
+
+  &__content {
+    margin-top: pxToVW(20);
+    padding: 0 0 0 pxToVW(27);
+    margin-bottom: pxToVW(12);
+
+    ul {
+      text-align: left;
+
+      li {
+        font-size: pxToVW(13);
+        font-weight: $regular;
+        color: #000;
+        line-height: pxToVW(19);
+        letter-spacing: pxToVW(-0.33);
+      }
+    }
+  }
+
+  &__note {
+    text-align: center;
+    font-size: pxToVW(10);
+    color: $color-input;
+    font-weight: $light;
+    line-height: pxToVW(15);
+    letter-spacing: pxToVW(-0.25);
+  }
+}
+
+.signUp {
+  &__wrapper {
+    .modal-footer {
+      display: inline-block;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.modal-error {
+  .modal-body > div {
+    line-height: pxToVW(19);
+    color: $color-black;
+  }
+}
+
+.easy-login__group-action-login {
+  span {
+    height: pxToVW(50);
+    width: pxToVW(50);
+    margin-right: pxToVW(10);
+  }
+}
+.my-facebook-button-class {
+  background-image: url('../../../../assets/images/facebook.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: pxToVW(50);
+  height: pxToVW(50);
+  text-indent: -9999px;
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0;
+  border-width: 0;
+}

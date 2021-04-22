@@ -1,0 +1,41 @@
+.topic {
+  .topic-label {
+    margin-bottom: pxToVW(5);
+  }
+
+  .topic-box {
+    border: pxToVW(1) solid $gallery;
+    padding: pxToVW(11) pxToVW(20) pxToVW(20) pxToVW(10);
+  }
+
+  .topic-item {
+    display: inline-block;
+    padding: pxToVW(4) pxToVW(12);
+    border-radius: pxToVW(14);
+    background-color: $popup-border;
+    margin-right: pxToVW(5);
+    margin-bottom: pxToVW(5);
+    cursor: pointer;
+
+    span {
+      font-size: pxToVW(12);
+      line-height: 1.5;
+      letter-spacing: pxToVW(-0.24);
+      font-weight: 300;
+      color: $dove-gray;
+    }
+  }
+
+  .topic-item.active {
+    background-color: $color-black;
+    opacity: 0.7;
+    span {
+      color: $white;
+      font-weight: 300;
+    }
+  }
+}
+
+.modal-content .modal-body__has-header.playlist {
+  padding: 0 0 pxToVW(25);
+}

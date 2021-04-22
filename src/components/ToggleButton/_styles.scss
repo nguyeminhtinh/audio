@@ -1,0 +1,104 @@
+.toggle-switch {
+  position: relative;
+  width: pxToVW(48);
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  text-align: left;
+  position: relative;
+  top: pxToVW(-8);
+
+  &__label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: pxToVW(20);
+    margin: 0;
+
+    &__inner {
+      display: block;
+      width: 200%;
+      margin-left: -100%;
+      @include transition(0.3s ease-in 0s);
+
+      &::before,
+      &::after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: pxToVW(28);
+        padding: 0;
+        color: $white;
+        box-sizing: border-box;
+      }
+
+      &:before {
+        content: "";
+        padding-left: pxToVW(6);
+        background-color: $btn-bg;
+      }
+
+      &::after {
+        content: "";
+        padding-right: pxToVW(5);
+        background-color: $btn-off;
+        color: $white;
+        text-align: right;
+      }
+    }
+
+    &__switch {
+      display: block;
+      width: pxToVW(22);
+      height: pxToVW(22);
+      margin: pxToVW(3);
+      background: $white;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border: 0 solid $btn-off;
+      border-radius: pxToVW(20);
+      @include transition(0.5s);
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked+.toggle-switch__label {
+      .toggle-switch__label__inner {
+        margin-left: 0;
+      }
+
+      .toggle-switch__label__switch {
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  @media (min-width: 640px) {
+    width: responsiveTablet(48);
+
+    &__label {
+      border-radius: responsiveTablet(20);
+
+      &__inner {
+
+        &::before,
+        &::after {
+          height: responsiveTablet(28);
+        }
+      }
+
+      &__switch {
+        width: responsiveTablet(22);
+        height: responsiveTablet(22);
+        border-radius: responsiveTablet(20);
+      }
+    }
+  }
+}

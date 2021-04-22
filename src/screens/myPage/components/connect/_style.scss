@@ -1,0 +1,29 @@
+.connect {
+  margin: pxToVW(69) pxToVW(15) 0;
+  border-bottom: pxToVW(1) solid $gallery;
+
+  &__item {
+    padding: pxToVW(13) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: pxToVW(1) solid $gallery;
+
+    span {
+      font-size: pxToVW(14);
+      line-height: pxToVW(20);
+      letter-spacing: pxToVW(-0.28);
+      font-weight: 500;
+    }
+
+    &--radio {
+      width: pxToVW(20);
+      height: pxToVW(20);
+      .wrap-radio{
+        img{
+          pointer-events: all;
+        }
+      }
+    }
+  }
+}

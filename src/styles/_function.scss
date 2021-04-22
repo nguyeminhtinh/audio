@@ -1,0 +1,47 @@
+/*
+* function: pxToRem
+* Used to convert unit 'px' to 'rem'
+*/
+@function pxToRem($size) {
+  $remSize: $size / $font-size-base;
+  @return #{$remSize}rem;
+}
+
+/*
+* function: pxToVH
+* Used to convert unit 'px' to 'vh'
+*/
+@function pxToVH($size) {
+  $vh: ($viewPort * 0.01);
+  @return ($size / $vh) * 1vh;
+}
+
+/*
+* function: pxToVW
+* Used to convert unit 'px' to 'vw'
+*/
+@function pxToVW($size) {
+  $vw: ($viewPort * 0.01);
+  @return ($size / $vw) * 1vw;
+}
+
+@function responsiveTablet($unitPx) {
+  $vw: 1vw;
+  $vw2: 0.5vw;
+
+  @if($unitPx>16) {
+    @return pxToVW($unitPx) - $vw;
+  }
+
+  @if($unitPx>8) {
+    @return pxToVW($unitPx) - $vw2;
+  }
+
+  @if($unitPx<-8) {
+    @return pxToVW($unitPx) - $vw;
+  }
+
+  @else {
+    @return pxToVW($unitPx)
+  }
+}
